@@ -6,11 +6,5 @@ module.exports = (phase, { defaultConfig }) => {
     };
   }
   defaultConfig["reactStrictMode"] = true;
-  if (process.env.ENV !== "dev") {
-    defaultConfig["images"] = {
-      loader: "imgix",
-      path: "https://ko22009.github.io",
-    };
-  }
   return defaultConfig;
 };
