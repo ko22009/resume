@@ -11,6 +11,8 @@ jobs:
       matrix:
         node-version: [14.x]
     steps:
+      - name: Cache yarn
+        uses: c-hive/gha-yarn-cache@v1
       - name: Get files
         uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
