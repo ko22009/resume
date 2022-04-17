@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: 'imgix',
-    path: 'ko22009.github.io',
+    path: 'https://ko22009.github.io',
   },
 }
 
