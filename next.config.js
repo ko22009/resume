@@ -9,7 +9,7 @@ module.exports = (phase, { defaultConfig }) => {
   if (process.env.ENV !== "dev") {
     defaultConfig["images"] = {
       loader: "imgix",
-      path: "/",
+      path: "https://ko22009.github.io",
     };
   }
   return defaultConfig;
