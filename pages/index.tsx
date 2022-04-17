@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Text from "../components/Text";
 import Image from "next/image";
+import avatar from "../public/avatar.jpg";
 
 const Home: NextPage = () => {
   return (
@@ -27,9 +28,10 @@ const Home: NextPage = () => {
           height: "200px",
           borderRadius: "200px",
           overflow: "hidden",
+          position: "relative",
         }}
       >
-        <Image src="/avatar.jpg" alt="Kutliakhmetov Ruslan" />
+        <Image src={avatar} alt="Kutliakhmetov Ruslan" />
       </div>
     </div>
   );
