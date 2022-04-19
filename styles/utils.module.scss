@@ -1,4 +1,4 @@
-$spaces: [2, 4, 6, 8, 12, 16, 24, 32];
+$spaces: [0, 2, 4, 6, 8, 12, 16, 24, 32];
 $positions: ["", "-top", "-bottom", "-left", "-right"];
 
 @each $space in $spaces {
@@ -12,4 +12,7 @@ $positions: ["", "-top", "-bottom", "-left", "-right"];
   }
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
 

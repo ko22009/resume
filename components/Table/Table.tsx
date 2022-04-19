@@ -2,6 +2,7 @@ import Text from "../Text";
 import styles from "./Table.module.scss";
 import utils from "../../styles/utils.module.scss";
 import cn from "classnames";
+import React from "react";
 
 type Table = {
   date: string;
@@ -14,23 +15,36 @@ type TableProps = {
   data: Table[];
 };
 
-const Table = ({ data, title }: TableProps) => (
-  <>
-    <Text type="title">{title}</Text>
-    {data.map((data) => (
-      <div key={data.date} className={styles.container}>
-        <div className={styles.item}>
-          <Text type="subtitle" className={utils.mb6}>
-            {data.title}
-          </Text>
-          <Text className={cn(styles.reverse, styles.date)} type="caption">
-            {data.date}
-          </Text>
-          <Text className={cn(styles.text)}>{data.description}</Text>
-        </div>
-      </div>
-    ))}
-  </>
-);
+const Table = ({ data, title }: TableProps) => {
+  return (
+    <>
+      <Text type="title" className={utils.mb0}>
+        {title}
+      </Text>
+      <table>
+        <tbody>
+          {data.map((data, i) => (
+            <tr key={i}>
+              <td className={styles.date}>
+                <Text className={cn(utils.pr12, utils.noWrap)} type="caption">
+                  {data.date}
+                </Text>
+              </td>
+              <td>
+                <Text type="subtitle" className={utils.mt6}>
+                  {data.title}
+                </Text>
+                <Text className={styles.dateSmall} type="caption">
+                  {data.date}
+                </Text>
+                <Text>{data.description}</Text>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  );
+};
 
 export default Table;
