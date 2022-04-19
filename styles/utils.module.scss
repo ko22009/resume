@@ -1,0 +1,15 @@
+$spaces: [2, 4, 6, 8, 12, 16, 24, 32];
+$positions: ["", "-top", "-bottom", "-left", "-right"];
+
+@each $space in $spaces {
+  @each $position in $positions {
+    .p#{str-slice($position, 2, 2)}-#{$space} {
+      padding#{$position}: #{$space}px;
+    }
+    .m#{str-slice($position, 2, 2)}-#{$space} {
+      margin#{$position}: #{$space}px;
+    }
+  }
+}
+
+

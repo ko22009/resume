@@ -1,0 +1,9 @@
+@import "styles/vars";
+
+@mixin small {
+  @media (max-width: $small) { @content; }
+}
+
+@mixin notSmall {
+  @media (min-width: $small) { @content; }
+}

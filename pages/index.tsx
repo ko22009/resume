@@ -1,8 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Text from "../components/Text";
-import Image from "next/image";
 import avatar from "../public/avatar.jpg";
+import Avatar from "../components/Avatar";
+import utils from "../styles/utils.module.scss";
+import Delimiter from "../components/Delimiter";
+import Contacts from "../components/Contacts";
+import Table from "../components/Table";
+import education from "../data/education.json";
+import experience from "../data/experience.json";
 
 const Home: NextPage = () => {
   return (
@@ -10,29 +16,31 @@ const Home: NextPage = () => {
       <Head>
         <title>Portfolio Kutliakhmetov Ruslan</title>
         <meta name="description" content="Portfolio Kutliakhmetov Ruslan" />
-        <link
-          href="http://fonts.googleapis.com/css?family=Roboto"
-          rel="stylesheet"
-          type="text/css"
-        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Text type="title">Kutliakhmetov Ruslan, front-end developer React</Text>
-      При возможности могу быть тимлидом.
-      <br /> <b>Английский</b>: B2 (Средне-продвинутый), разговорный английский.
-      <br /> <b>Место фактического проживания</b>: Курган
-      <Text type="subtitle">Образование</Text>
-      <div
-        style={{
-          width: "200px",
-          height: "200px",
-          borderRadius: "200px",
-          overflow: "hidden",
-          position: "relative",
-        }}
-      >
-        <Image src={avatar} alt="Kutliakhmetov Ruslan" />
-      </div>
+      <Avatar
+        className={utils.mb16}
+        url={avatar.src}
+        alt="Kutliakhmetov Ruslan"
+      />
+      <Text type="header" textAlign="center">
+        Kutliakhmetov Ruslan, 28&nbsp;years
+      </Text>
+      <Text type="subheader" textAlign="center">
+        front-end developer React
+      </Text>
+      <Contacts />
+      <Delimiter />
+      <Text type="title">Profile</Text>
+      <Text>
+        Graphic designer with +8 years of experience in branding and print
+        design. Skilled at Adobe Creative Suite (Photoshop, Illustrator,
+        InDesign) as well as sketching and hand drawing. Supervised 23 print
+        design projects that resulted in an increase of 32% in savings.
+      </Text>
+      <Delimiter />
+      <Table data={education} title="Образование" />
+      <Table data={experience} title="Опыт работы" />
     </div>
   );
 };

@@ -2,11 +2,7 @@
 @import "styles/mixins";
 
 .container {
-  padding: 32px;
+  justify-content: space-between;
   max-width: 600px;
-  margin: 0 auto;
-
-  @include small {
-    padding: 20px 8px;
-  }
+  margin: 12px auto 0;
 }
